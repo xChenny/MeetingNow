@@ -1,0 +1,92 @@
+% Created 2019-02-23 Sat 16:22
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Andrew Chen}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={Andrew Chen},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.0.50 (Org mode 9.1.14)}, 
+ pdflang={English}}
+\begin{document}
+
+\tableofcontents
+
+\section{Project Description}
+\label{sec:org04570ce}
+
+I plan to make a scheduling service application similar to doodle.com. The following sections will
+describe the features and how I plan to implement the application on iOS.
+
+\subsection{Critical Features}
+\label{sec:orged7d666}
+
+\begin{itemize}
+\item Allow users to copy a shareable code to the meeting scheduler "room".
+\item Allow users to see a calendar with timeslots that people are available on.
+\item Will notify participants if all of the people who were invited all submitted their availabilities.
+\item Allow all participants to vote on a meeting time if there is are multiple.
+\item Will allow the winning timeslot to be added to the calendar
+\end{itemize}
+
+\subsection{Lower-priority Features}
+\label{sec:org0ba78d7}
+
+I will choose to do one or more of these features.
+
+\begin{itemize}
+\item Users can choose/vote on a map for meeting place.
+\item In-room chat for notifying participants
+\end{itemize}
+
+\subsection{Critical Frameworks}
+\label{sec:org1f6a2cc}
+
+\begin{enumerate}
+\item \textbf{AlamoFire}: for making network requests to a server.
+\item \textbf{EventKit}: For accessing the calendar to add the event
+\item \textbf{Starscream}: Websocket Library. Send room-specific information to server
+\end{enumerate}
+
+\subsection{Optional Frameworks}
+\label{sec:org2af2e33}
+
+I'll be using one or more of these depending on what feature I plan to implement. 
+
+\begin{enumerate}
+\item \textbf{MapKit}: For displaying possible meeting locations (May not use this)
+\item \textbf{MessageKit}: For the chat (May not use this)
+\end{enumerate}
+
+\subsection{Timeline}
+\label{sec:orgd1ab4b1}
+
+\subsubsection{Week 5 \textit{<2019-02-18 Mon>}}
+\label{sec:org928ee12}
+\subsubsection{Week 6 \textit{<2019-02-25 Mon>}}
+\label{sec:orgd74daba}
+\subsubsection{Week 7 \textit{<2019-03-04 Mon>}}
+\label{sec:org47207e2}
+\subsubsection{Week 8 \textit{<2019-03-11 Mon>}}
+\label{sec:org1f8efe0}
+\subsubsection{Week 9 \textit{<2019-03-18 Mon>}}
+\label{sec:org5a958c0}
+\subsubsection{Week 10 \textit{<2019-03-25 Mon>}}
+\label{sec:org445f899}
+\end{document}

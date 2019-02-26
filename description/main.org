@@ -1,0 +1,42 @@
+* Project Description
+
+  I plan to make a scheduling service application similar to doodle.com. The following sections will
+  describe the features and how I plan to implement the application on iOS.
+
+** Critical Features
+
+   - Allow users to copy a shareable code to the meeting scheduler "room".
+   - Allow users to see a calendar with timeslots that people are available on.
+   - Will notify participants if all of the people who were invited all submitted their availabilities.
+   - Allow all participants to vote on a meeting time if there is are multiple.
+   - Will allow the winning timeslot to be added to the calendar
+
+** Lower-priority Features
+   
+   I will choose to do one or more of these features.
+   
+   - Users can choose/vote on a map for meeting place.
+   - In-room chat for notifying participants
+
+** Critical Frameworks
+
+   1. *AlamoFire*: for making network requests to a server.
+   2. *EventKit*: For accessing the calendar to add the event
+   3. *Starscream*: Websocket Library. Send room-specific information to server
+
+** Optional Frameworks
+
+   I'll be using one or more of these depending on what feature I plan to implement. 
+
+   1. *MapKit*: For displaying possible meeting locations (May not use this)
+   2. *MessageKit*: For the chat (May not use this)
+    
+** Timeline
+
+*** Week 5 <2019-02-18 Mon> 
+*** Week 6 <2019-02-25 Mon> 
+*** Week 7 <2019-03-04 Mon> 
+*** Week 8 <2019-03-11 Mon> 
+*** Week 9 <2019-03-18 Mon> 
+*** Week 10 <2019-03-25 Mon> 
+
