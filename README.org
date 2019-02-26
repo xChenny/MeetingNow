@@ -33,10 +33,16 @@
     
 ** Timeline
 
-*** Week 5 <2019-02-18 Mon> 
-*** Week 6 <2019-02-25 Mon> 
-*** Week 7 <2019-03-04 Mon> 
-*** Week 8 <2019-03-11 Mon> 
-*** Week 9 <2019-03-18 Mon> 
-*** Week 10 <2019-03-25 Mon> 
-
+    | Week   | To do                                                       |
+    |--------+-------------------------------------------------------------|
+    | Feb 25 | Idea accepted. Get initial server with test routes running. |
+    | Mar 04 | Continue working on API                                     |
+    | Mar 11 | Draft application UI                                        |
+    | Mar 18 | Start working on application                                |
+    | Mar 25 | Integrate API with application                              |
+    | Apr 01 | Finish up application                                       |
+    | Apr 08 | Work on optional additional features                        |
+    | Apr 15 | Work on optional additional features                        |
+    | Apr 22 | Work on optional additional features                        |
+    | Apr 29 | Finishing touches to application                            |
+   
