@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { RoomSchema, RoomSchema } = require("../schemas");
+const { RoomSchema } = require("../schemas");
 
 const Room = mongoose.model("Room", RoomSchema);
 
@@ -14,12 +14,12 @@ const create = async params => {
   const newRoom = new Room(params);
   // variable used to see if insertion was successful
   const success = new Promise((resolve, reject) => {
-    newRoom.save((err, newMem) => {
+    newRoom.save((err, newR) => {
       if (err) {
         console.error(err.message);
         reject(false);
       } else {
-        newMem.insertionSuccess();
+        newR.insertionSuccess();
         resolve(true);
       }
     });
