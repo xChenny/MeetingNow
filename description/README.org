@@ -1,3 +1,10 @@
+* 2nd Deliverable Update
+
+  1. The currently completed features are at the bottom of this file under the "Current App/Server Progress" sections
+  2. I have been pretty busy lately (with Senior Design, other classes, and whatnot), so my progress was slower than what was originally expected, but I finished a lot of the server requirements already.
+  3. Currently, on the application side, I have many of the Storyboard Screens prototyped already, so I just have to code the logic.
+  4. I have updated the timeline below to hopefully more accurately portray the expected completion of this project.
+
 * Project Description
 
   I plan to make a scheduling service application similar to doodle.com. The following sections will
@@ -31,7 +38,8 @@
 
    1. *MapKit*: For displaying possible meeting locations (May not use this)
    2. *MessageKit*: For the chat (May not use this)
-    
+   
+
 ** Timeline
 
     | Week   | To do                                                       |
@@ -40,11 +48,11 @@
     | Mar 04 | Continue working on API                                     |
     | Mar 11 | Draft application UI                                        |
     | Mar 18 | Start working on application                                |
-    | Mar 25 | Integrate API with application                              |
-    | Apr 01 | Finish up application                                       |
-    | Apr 08 | Work on optional additional features                        |
+    | Mar 25 | Login/Registration functionality finished                   |
+    | Apr 01 | Working on Room Functionality                               |
+    | Apr 08 | Working on Connecting app to backend                        |
     | Apr 15 | Work on optional additional features                        |
-    | Apr 22 | Work on optional additional features                        |
+    | Apr 22 | Finish up application                                       |
     | Apr 29 | Finishing touches to application                            |
    
 ** Current App Progess
@@ -71,12 +79,10 @@
   |--------------------------------------------------------------------------+-----------|
   | User Authentication                                                      | yes       |
   | User Registration                                                        | yes       |
-  | Generate unique key to join rooms                                        |           |
   | Create new room                                                          | yes       |
-  | Add user to room                                                         |           |
+  | Add user to room                                                         | yes       |
   | Notify all members of room when everyone filled out their availabilities |           |
   | Protected Routes with JWT                                                | yes       |
-  |                                                                          |           |
 
 
 ** Implementation Notes:

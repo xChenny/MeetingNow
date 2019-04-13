@@ -6,11 +6,17 @@ const router = Router();
 
 router.post("/register", async (req, res) => {
   try {
+    console.log("doing a registration");
+
     const response = await createUser(req.body);
+    console.log("response:", response);
+    if (response.err) {
+      throw response.err;
+    }
     res.json(response);
   } catch (error) {
     console.log(error);
-    res.json(error);
+    res.status(400).json(error);
   }
 });
 

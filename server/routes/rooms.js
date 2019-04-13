@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const passport = require("passport");
-const { createRoom } = require("../db/data/room");
+const { createRoom, addMemberToRoom } = require("../db/data/room");
 const uuidv4 = require("uuid/v4");
 
 /**
@@ -25,6 +25,9 @@ router.post(
     try {
       // TODO: I need to also add the current user to the room
       const response = await createRoom(req.body);
+      if (response.err) {
+        throw response.err;
+      }
       res.json(response);
     } catch (err) {
       console.log(err);
@@ -33,9 +36,14 @@ router.post(
   }
 );
 
-router.post("/join-room", (req, res) => {
-  // TODO: Add user route
-  const { roomId, userId } = req.body;
+router.post("/join", async (req, res) => {
+  try {
+    const response = await addMemberToRoom(req.body);
+    res.json({ response });
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
 });
 
 module.exports = router;

@@ -13,6 +13,14 @@ let RoomSchema = new Schema({
   members: [{ type: Schema.Types.ObjectId, ref: "User" }]
 });
 
+RoomSchema.methods.updateSuccess = function() {
+  console.log(
+    `[Mongoose Room Schema]: The room named "${
+      this.name
+    }" has been updated successfully!`
+  );
+};
+
 RoomSchema.methods.insertionSuccess = function() {
   console.log(
     `[Mongoose Room Schema]: A new room named "${

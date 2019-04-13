@@ -29,31 +29,36 @@ const createUser = body => {
   // I insert document, so no need to do so here
   // validate passwords match
   if (password !== password2) {
-    throw "Passwords must match";
+    throw { err: "Passwords must match" };
   }
   const success = new Promise(async (resolve, reject) => {
     // validate email is used or not
     const userWithSameEmail = await findUser({ email });
     if (userWithSameEmail.data !== undefined) {
-      reject("There is already a user with that email address.");
+      return reject({
+        err: "There is already a user with that email address."
+      });
     }
     const params = { name, email, password };
+    if (!name || !name || !password) {
+      return reject({ err: "Missing arguments" });
+    }
     // generate password hash
     bcrypt.genSalt(saltRounds, (err, salt) =>
-      bcrypt.hash(params.password, salt, (err, hash) => {
-        if (err) reject(err);
+      bcrypt.hash(params.password, salt, (error, hash) => {
+        if (error) {
+          return reject({ err: error });
+        }
         params.password = hash;
-
         // create new user doc
         const newUser = new User(params);
         // save new user doc to mongodb
-        newUser.save((err, newUser) => {
+        newUser.save((err, newUsr) => {
           if (err) {
-            console.error(err.message);
-            reject(err.message);
+            return reject({ err: err.message });
           } else {
-            newUser.insertionSuccess();
-            resolve({ data: newUser });
+            newUsr.insertionSuccess();
+            return resolve({ data: newUsr });
           }
         });
       })

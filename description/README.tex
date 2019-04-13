@@ -1,4 +1,4 @@
-% Created 2019-04-13 Sat 16:42
+% Created 2019-04-13 Sat 18:41
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -28,14 +28,24 @@
 
 \tableofcontents
 
+\section{2nd Deliverable Update}
+\label{sec:orgc256b8f}
+
+\begin{enumerate}
+\item The currently completed features are at the bottom of this file under the "Current App/Server Progress" sections
+\item I have been pretty busy lately (with Senior Design, other classes, and whatnot), so my progress was slower than what was originally expected, but I finished a lot of the server requirements already.
+\item Currently, on the application side, I have many of the Storyboard Screens prototyped already, so I just have to code the logic.
+\item I have updated the timeline below to hopefully more accurately portray the expected completion of this project.
+\end{enumerate}
+
 \section{Project Description}
-\label{sec:org4e977e5}
+\label{sec:orgc6e8d16}
 
 I plan to make a scheduling service application similar to doodle.com. The following sections will
 describe the features and how I plan to implement the application on iOS.
 
 \subsection{Critical Features}
-\label{sec:org4cf221f}
+\label{sec:org1c66637}
 
 \begin{itemize}
 \item Allow users to register/login and persist their session using JWT (JSON Web Tokens)
@@ -47,7 +57,7 @@ describe the features and how I plan to implement the application on iOS.
 \end{itemize}
 
 \subsection{Lower-priority Features}
-\label{sec:org8cabcee}
+\label{sec:org10cc877}
 
 I will choose to do one or more of these features.
 
@@ -57,7 +67,7 @@ I will choose to do one or more of these features.
 \end{itemize}
 
 \subsection{Critical Frameworks}
-\label{sec:orgb7011cd}
+\label{sec:org983003b}
 
 \begin{enumerate}
 \item \textbf{AlamoFire}: for making network requests to a server.
@@ -66,7 +76,7 @@ I will choose to do one or more of these features.
 \end{enumerate}
 
 \subsection{Optional Frameworks}
-\label{sec:orgd33fe7b}
+\label{sec:org96b4f1d}
 
 I'll be using one or more of these depending on what feature I plan to implement. 
 
@@ -75,8 +85,9 @@ I'll be using one or more of these depending on what feature I plan to implement
 \item \textbf{MessageKit}: For the chat (May not use this)
 \end{enumerate}
 
+
 \subsection{Timeline}
-\label{sec:org54d56c8}
+\label{sec:orgbdeacf6}
 
 \begin{center}
 \begin{tabular}{ll}
@@ -86,17 +97,17 @@ Feb 25 & Idea accepted. Get initial server with test routes running.\\
 Mar 04 & Continue working on API\\
 Mar 11 & Draft application UI\\
 Mar 18 & Start working on application\\
-Mar 25 & Integrate API with application\\
-Apr 01 & Finish up application\\
-Apr 08 & Work on optional additional features\\
+Mar 25 & Login/Registration functionality finished\\
+Apr 01 & Working on Room Functionality\\
+Apr 08 & Working on Connecting app to backend\\
 Apr 15 & Work on optional additional features\\
-Apr 22 & Work on optional additional features\\
+Apr 22 & Finish up application\\
 Apr 29 & Finishing touches to application\\
 \end{tabular}
 \end{center}
 
 \subsection{Current App Progess}
-\label{sec:org9bc1629}
+\label{sec:org7c324f9}
 
 \begin{center}
 \begin{tabular}{ll}
@@ -119,7 +130,7 @@ Calendar Component & yes\\
 
 
 \subsection{Current Server Progress}
-\label{sec:org5b62cf3}
+\label{sec:orgae11473}
 
 \begin{center}
 \begin{tabular}{ll}
@@ -127,18 +138,16 @@ Feature & Complete?\\
 \hline
 User Authentication & yes\\
 User Registration & yes\\
-Generate unique key to join rooms & \\
 Create new room & yes\\
-Add user to room & \\
+Add user to room & yes\\
 Notify all members of room when everyone filled out their availabilities & \\
 Protected Routes with JWT & yes\\
- & \\
 \end{tabular}
 \end{center}
 
 
 \subsection{Implementation Notes:}
-\label{sec:org1f5e90c}
+\label{sec:org43b58ff}
 
 \begin{enumerate}
 \item The unique key to join a room can simply just be the rooms id. This is probably not the best, but in our case, this should suffice.
