@@ -1,7 +1,7 @@
-const MemberSchema = require("./memberSchema");
+const UserSchema = require("./userSchema");
 const RoomSchema = require("./roomSchema");
 
 module.exports = {
-  MemberSchema,
+  UserSchema,
   RoomSchema
 };

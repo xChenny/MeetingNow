@@ -1,20 +1,21 @@
 require("dotenv").config();
 
 const express = require("express");
-var bodyParser = require("body-parser");
 const morgan = require("morgan");
 const port = process.env.PORT || 3000;
 const routes = require("./routes");
+const passport = require("passport");
 
 const app = express();
 
+// config
+require("./config/passport")(passport);
+
 // middleware functions
 app.use(morgan("dev"));
-app.use(bodyParser.raw());
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
-// parse application/json
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(passport.initialize());
 
 // connect to db
 const dbConnection = require("./db/connect");

@@ -1,44 +1,41 @@
 const express = require("express");
 const router = express.Router();
-const { add: addMember } = require("../db/data/member");
+const passport = require("passport");
+const { createRoom } = require("../db/data/room");
+const uuidv4 = require("uuid/v4");
 
-router.get("/", (req, res) => {
-  res.send("hello");
-});
-
-// create a new room
-router.post("/create", async (req, res) => {
-  const params = req.body;
-  try {
-    await create(params);
-    res.send("success");
-  } catch (err) {
-    res.send("unsuccessful");
+/**
+ * Test route to check if jwt auth is working.
+ */
+router.get(
+  "/",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    res.json({ msg: "Welcome" });
   }
-});
+);
 
-// create a new member and add them to the room
-router.post("/add-member", async (req, res) => {
-  // this code supports adding multiple members, but
-  // probably just better to add one at a time.
-  const { body } = req;
-  let success = true;
-  // insert every object inside of the params
-  for (let newMember of body) {
+/**
+ * Create a new room
+ */
+router.post(
+  "/create",
+  passport.authenticate("jwt", { session: false }),
+  async (req, res) => {
     try {
-      await addMember(newMember);
+      // TODO: I need to also add the current user to the room
+      const response = await createRoom(req.body);
+      res.json(response);
     } catch (err) {
-      success = false;
-      continue;
+      console.log(err);
+      res.status(400).json(err);
     }
   }
+);
 
-  if (success) {
-    //TODO: send back useful information like {roomId, members}
-    res.send("Member successfully added!");
-  } else {
-    res.send("Unsuccessful in adding member!");
-  }
+router.post("/join-room", (req, res) => {
+  // TODO: Add user route
+  const { roomId, userId } = req.body;
 });
 
 module.exports = router;
